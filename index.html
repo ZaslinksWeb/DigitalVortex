@@ -5,30 +5,201 @@
   <title>DigitalVortex – Trending Digital Downloads & Deals</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="DigitalVortex – trending digital downloads at the lowest prices. Ebooks, templates, graphics, music, bundles, and more." />
+
+  <!-- Google AdSense (GLOBAL) – replace with your real client ID and uncomment -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR-ADSENSE-CLIENT-ID"
+          crossorigin="anonymous"></script>
+  -->
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: #f5f5f5; color: #222; line-height: 1.6; }
-    header { background: #141414; color: #fff; padding: 15px 20px; position: sticky; top: 0; z-index: 10; }
-    header .logo { font-size: 1.7rem; font-weight: bold; letter-spacing: 0.5px; }
-    header nav a { color: #ddd; margin-right: 15px; text-decoration: none; font-size: 0.95rem; }
-    header nav a:hover { color: #fff; }
-    .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
-    .hero { background: linear-gradient(135deg, #5e5eff, #1b1bbf); padding: 25px; border-radius: 12px; color: #fff; margin-bottom: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-    .hero h1 { font-size: 1.9rem; margin-bottom: 12px; }
-    .hero p { margin-bottom: 12px; }
-    .hero .btn-primary { display: inline-block; padding: 10px 20px; background: #ffb347; color: #000; text-decoration: none; font-weight: bold; border-radius: 8px; }
-    .ad-block { background: #fff; padding: 10px; border-radius: 10px; margin: 15px 0; text-align: center; font-size: 0.85rem; }
-    .section-title { margin: 25px 0; font-size: 1.4rem; font-weight: bold; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-    .product-card { background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 1px 5px rgba(0,0,0,0.1); }
-    .product-card h3 { margin-bottom: 8px; }
-    .product-price { color: #1abc9c; font-weight: bold; margin-bottom: 8px; }
-    .btn-buy { display: block; text-align: center; padding: 8px; background: #1abc9c; color: #fff; border-radius: 6px; font-weight: bold; text-decoration: none; }
-    footer { background: #141414; color: #bbb; padding: 20px; font-size: 0.85rem; text-align: center; margin-top: 20px; }
-    footer a { color: #bbb; text-decoration: none; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background:#f5f5f5;
+      color:#222;
+      line-height:1.6;
+    }
+
+    header {
+      background:#141414;
+      color:#fff;
+      padding:15px 20px;
+      position:sticky;
+      top:0;
+      z-index:10;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    header .logo {
+      font-size:1.7rem;
+      font-weight:bold;
+      letter-spacing:0.5px;
+    }
+
+    nav a {
+      color:#ddd;
+      margin-left:15px;
+      text-decoration:none;
+      font-size:0.95rem;
+    }
+
+    nav a:hover {
+      color:#fff;
+    }
+
+    .container {
+      max-width:1200px;
+      margin:25px auto;
+      padding:0 20px;
+    }
+
+    .hero {
+      background:linear-gradient(135deg,#5e5eff,#1b1bbf);
+      padding:35px;
+      border-radius:16px;
+      color:#fff;
+      margin-bottom:30px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.15);
+    }
+
+    .hero h1 {
+      font-size:2rem;
+      margin-bottom:10px;
+    }
+
+    .hero p {
+      margin-bottom:12px;
+      font-size:1.05rem;
+    }
+
+    .btn-primary {
+      display:inline-block;
+      padding:12px 22px;
+      background:#ffb347;
+      color:#000;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:8px;
+      font-size:1rem;
+    }
+
+    .btn-primary:hover {
+      opacity:0.9;
+    }
+
+    .ad-block {
+      background:#fff;
+      border-radius:10px;
+      padding:10px;
+      margin:25px 0;
+      text-align:center;
+      font-size:0.85rem;
+      box-shadow:0 1px 5px rgba(0,0,0,0.05);
+    }
+
+    .section-title {
+      font-size:1.6rem;
+      font-weight:bold;
+      margin:25px 0 15px;
+    }
+
+    .products-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      gap:18px;
+      margin-bottom:30px;
+    }
+
+    .product-card {
+      background:#fff;
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .product-badge {
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:#888;
+      margin-bottom:4px;
+    }
+
+    .product-card h3 {
+      font-size:1.1rem;
+      margin-bottom:6px;
+      color:#111;
+    }
+
+    .product-desc {
+      font-size:0.9rem;
+      margin-bottom:10px;
+      color:#555;
+    }
+
+    .product-price {
+      font-size:1rem;
+      font-weight:bold;
+      color:#1abc9c;
+      margin-bottom:12px;
+    }
+
+    .btn-buy {
+      text-align:center;
+      padding:10px;
+      background:#1abc9c;
+      color:#fff;
+      text-decoration:none;
+      border-radius:6px;
+      font-weight:bold;
+      margin-top:auto;
+      font-size:0.95rem;
+    }
+
+    .btn-buy:hover {
+      background:#159173;
+    }
+
+    .info-text {
+      font-size:0.95rem;
+      color:#444;
+      margin-bottom:8px;
+    }
+
+    footer {
+      background:#141414;
+      color:#bbb;
+      padding:25px;
+      text-align:center;
+      margin-top:40px;
+      font-size:0.9rem;
+    }
+
+    footer a {
+      color:#bbb;
+      text-decoration:none;
+      margin:0 5px;
+    }
+
+    footer a:hover {
+      color:#fff;
+    }
+
+    @media (max-width:600px){
+      .hero { padding:25px; }
+      .hero h1 { font-size:1.7rem; }
+      nav a { font-size:0.85rem; margin-left:10px; }
+    }
   </style>
 </head>
 <body>
+
 <header>
   <div class="logo">DigitalVortex</div>
   <nav>
@@ -40,40 +211,299 @@
     <a href="https://tiktok.com/@yourpage" target="_blank">TikTok</a>
   </nav>
 </header>
+
 <div class="container">
+
+  <!-- HERO SECTION -->
   <section class="hero">
     <h1>Welcome to DigitalVortex</h1>
-    <p>Your hub for trending digital downloads at the lowest prices.</p>
-    <a href="#products" class="btn-primary">Browse Products</a>
+    <p>Your hub for trending digital downloads at the lowest prices – templates, AI packs, music, ebooks, planners & more.</p>
+    <a href="#products" class="btn-primary">Browse Trending Deals</a>
   </section>
-  <div class="ad-block"><p>Ad space</p></div>
-  <h2 id="products" class="section-title">Popular Downloads</h2>
+
+  <!-- TOP AD BLOCK -->
+  <div class="ad-block">
+    <!-- AdSense unit (e.g. responsive banner) – paste your ad code here -->
+    Top Banner Ad Space
+  </div>
+
+  <!-- PRODUCTS -->
+  <h2 id="products" class="section-title">Trending Digital Downloads</h2>
+
   <div class="products-grid">
 
-    <div class="product-card"><h3>Viral Shorts Templates</h3><p>100 TikTok/Reels templates.</p><p class="product-price">$3.99</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>AI Art Pack (500 JPG)</h3><p>Beautiful HD artwork for creators.</p><p class="product-price">$4.99</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>YouTube Starter Kit</h3><p>Channel banner, thumbnails, presets, scripts & more.</p><p class="product-price">$6.99</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>1000 Motivational Quotes Pack</h3><p>Ready-to-post quotes.</p><p class="product-price">$2.99</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>AI Character Pack</h3><p>100 AI futuristic characters.</p><p class="product-price">$3.49</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>Ebook: How to Earn Online Fast</h3><p>Beginner-friendly guide.</p><p class="product-price">$2.99</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>300 Canva Business Templates</h3><p>Editable templates.</p><p class="product-price">$4.49</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>Editable Resume Pack</h3><p>15 professional CV templates.</p><p class="product-price">$3.99</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>AI Voice Pack</h3><p>50 AI voices for intros & ads.</p><p class="product-price">$3.99</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>Crypto & Finance Icon Set</h3><p>400 icons for apps and websites.</p><p class="product-price">$3.49</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>Digital Planner Bundle 2025</h3><p>Planners, calendars, trackers.</p><p class="product-price">$4.99</p><a href="#" class="btn-buy">Buy & Download</a></div>
-    <div class="product-card"><h3>Podcast Starter Pack</h3><p>Intro music, covers & presets.</p><p class="product-price">$5.49</p><a href="#" class="btn-buy">Buy & Download</a></div>
+    <!-- AMAZON AFFILIATE PRODUCTS -->
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>AI Art Mega Pack</h3>
+      <p class="product-desc">2000 HD AI-generated artworks for thumbnails, covers & social posts.</p>
+      <p class="product-price">$7.99</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID1?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>YouTube Starter Kit</h3>
+      <p class="product-desc">Thumbnail templates, scripts, checklists & gear guide for beginners.</p>
+      <p class="product-price">$5.49</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID2?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>Digital Planner Pack 2025</h3>
+      <p class="product-desc">Daily, weekly & monthly planners in PDF & tablet formats.</p>
+      <p class="product-price">$5.49</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID3?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>100 Side Hustles Ebook</h3>
+      <p class="product-desc">Beginner-friendly guide with step-by-step online income ideas.</p>
+      <p class="product-price">$2.49</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID4?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>Aesthetic Wallpaper Pack</h3>
+      <p class="product-desc">1000 HD + 4K wallpapers for phone, tablet & desktop.</p>
+      <p class="product-price">$2.39</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID5?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>AI Anime Character Pack</h3>
+      <p class="product-desc">1000 anime-style characters for covers, games & designs.</p>
+      <p class="product-price">$4.69</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID6?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>Royalty-Free Music Bundle</h3>
+      <p class="product-desc">Background tracks for YouTube, podcasts & courses.</p>
+      <p class="product-price">$5.19</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID7?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>Email Swipe File</h3>
+      <p class="product-desc">200 proven marketing & sales email templates.</p>
+      <p class="product-price">$4.39</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID8?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>Startup Branding Pack</h3>
+      <p class="product-desc">Logos, color palettes & brand guidelines for new businesses.</p>
+      <p class="product-price">$7.49</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID9?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Amazon</div>
+      <h3>Meme Pack 1000+</h3>
+      <p class="product-desc">Huge meme collection ready to post on socials.</p>
+      <p class="product-price">$2.49</p>
+      <a href="https://www.amazon.com/dp/PRODUCTID10?tag=YOUR_AMAZON_TAG" target="_blank" class="btn-buy">View on Amazon</a>
+    </div>
+
+    <!-- ETSY AFFILIATE PRODUCTS -->
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>Canva Template Bundle (500+)</h3>
+      <p class="product-desc">Instagram, business & flyer templates – fully editable.</p>
+      <p class="product-price">$6.99</p>
+      <a href="https://www.etsy.com/listing/LISTINGID1?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>Instagram Reels Pack</h3>
+      <p class="product-desc">200 Canva reels templates for quick viral content.</p>
+      <p class="product-price">$4.49</p>
+      <a href="https://www.etsy.com/listing/LISTINGID2?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>Notion Life & Business Planner</h3>
+      <p class="product-desc">Life OS, finance, content, tasks & goals in one system.</p>
+      <p class="product-price">$2.99</p>
+      <a href="https://www.etsy.com/listing/LISTINGID3?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>Podcast Starter Bundle</h3>
+      <p class="product-desc">Cover art templates, intros, checklists & media kit.</p>
+      <p class="product-price">$5.99</p>
+      <a href="https://www.etsy.com/listing/LISTINGID4?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>Crypto Icon Pack</h3>
+      <p class="product-desc">800 modern icons for dashboards, apps & websites.</p>
+      <p class="product-price">$3.89</p>
+      <a href="https://www.etsy.com/listing/LISTINGID5?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>Business Card Templates</h3>
+      <p class="product-desc">Editable Canva & PSD designs for professionals.</p>
+      <p class="product-price">$4.49</p>
+      <a href="https://www.etsy.com/listing/LISTINGID6?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>TikTok Hooks & Scripts Pack</h3>
+      <p class="product-desc">500 scroll-stopping hooks for videos & ads.</p>
+      <p class="product-price">$3.79</p>
+      <a href="https://www.etsy.com/listing/LISTINGID7?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>Fitness Tracker Bundle</h3>
+      <p class="product-desc">Workout, habit & nutrition trackers for print/tablet.</p>
+      <p class="product-price">$2.79</p>
+      <a href="https://www.etsy.com/listing/LISTINGID8?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>Social Media Quotes Pack</h3>
+      <p class="product-desc">1500 ready-to-post quotes for IG, TikTok & Pinterest.</p>
+      <p class="product-price">$2.99</p>
+      <a href="https://www.etsy.com/listing/LISTINGID9?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Etsy</div>
+      <h3>Social Media Icons Bundle</h3>
+      <p class="product-desc">1000 flat, outline & 3D social icons.</p>
+      <p class="product-price">$2.99</p>
+      <a href="https://www.etsy.com/listing/LISTINGID10?ref=YOUR_ETSY_AFF_ID" target="_blank" class="btn-buy">View on Etsy</a>
+    </div>
+
+    <!-- ENVATO AFFILIATE PRODUCTS -->
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>Video LUTs & Filters Pack</h3>
+      <p class="product-desc">Cinematic color grading presets for Premiere, Final Cut & DaVinci.</p>
+      <p class="product-price">$3.29</p>
+      <a href="https://1.envato.market/ENVATO_CODE1" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>3D Icon Set (500 Icons)</h3>
+      <p class="product-desc">Glossy 3D icons for apps, UI & presentations.</p>
+      <p class="product-price">$3.49</p>
+      <a href="https://1.envato.market/ENVATO_CODE2" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>Canva Logo Creator Kit</h3>
+      <p class="product-desc">Logo elements & templates to build brands quickly.</p>
+      <p class="product-price">$3.79</p>
+      <a href="https://1.envato.market/ENVATO_CODE3" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>Marketing Funnel Templates</h3>
+      <p class="product-desc">Landing pages, ad creatives & email flow templates.</p>
+      <p class="product-price">$5.99</p>
+      <a href="https://1.envato.market/ENVATO_CODE4" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>Online Course Creator Pack</h3>
+      <p class="product-desc">Slide decks, worksheets, workbooks & promo materials.</p>
+      <p class="product-price">$7.99</p>
+      <a href="https://1.envato.market/ENVATO_CODE5" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>AI Voiceover Pack</h3>
+      <p class="product-desc">60+ AI-style voiceover tracks for intros & adverts.</p>
+      <p class="product-price">$4.49</p>
+      <a href="https://1.envato.market/ENVATO_CODE6" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>Crypto & Finance UI Kit</h3>
+      <p class="product-desc">Dashboards, charts & components for fintech apps.</p>
+      <p class="product-price">$6.49</p>
+      <a href="https://1.envato.market/ENVATO_CODE7" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>Business Presentation Templates</h3>
+      <p class="product-desc">PowerPoint & Keynote slides for startups & agencies.</p>
+      <p class="product-price">$5.49</p>
+      <a href="https://1.envato.market/ENVATO_CODE8" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>Ultimate Social Pack</h3>
+      <p class="product-desc">Stories, posts, carousels & ad templates for all platforms.</p>
+      <p class="product-price">$6.99</p>
+      <a href="https://1.envato.market/ENVATO_CODE9" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">Envato</div>
+      <h3>Full Branding & Website Bundle</h3>
+      <p class="product-desc">Logos, brand kit, web templates & social media kit.</p>
+      <p class="product-price">$9.99</p>
+      <a href="https://1.envato.market/ENVATO_CODE10" target="_blank" class="btn-buy">View on Envato</a>
+    </div>
 
   </div>
-  <div class="ad-block"><p>Ad space</p></div>
+
+  <!-- MIDDLE AD BLOCK -->
+  <div class="ad-block">
+    <!-- Another AdSense / ad network unit -->
+    In-Content Ad Space
+  </div>
+
+  <!-- HOW IT WORKS -->
   <h2 id="how" class="section-title">How It Works</h2>
-  <p>Select a product → Pay securely → Download instantly.</p>
+  <p class="info-text">1. Browse the trending digital products above.</p>
+  <p class="info-text">2. Click the button – you’ll be redirected to Amazon, Etsy or Envato via our affiliate link.</p>
+  <p class="info-text">3. Complete your purchase on their secure checkout and download instantly.</p>
+  <p class="info-text">We may earn a small commission at no extra cost to you when you buy through our links.</p>
+
+  <!-- CONTACT -->
+  <h2 id="contact" class="section-title">Contact</h2>
+  <p class="info-text">Questions, collabs or support?</p>
+  <p class="info-text">Email: <a href="mailto:support@digitalvortex.com">support@digitalvortex.com</a></p>
+
 </div>
+
 <footer>
   © <script>document.write(new Date().getFullYear())</script> DigitalVortex · All Rights Reserved
-  <br><br>
+  <br /><br />
   <a href="https://facebook.com/yourpage" target="_blank">Facebook</a> ·
   <a href="https://instagram.com/yourpage" target="_blank">Instagram</a> ·
   <a href="https://tiktok.com/@yourpage" target="_blank">TikTok</a>
 </footer>
+
 </body>
 </html>
